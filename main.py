@@ -22,7 +22,7 @@ class ChatRequest(BaseModel):
 
 @app.get("/")
 def home():
-    return {"status": "Power Gym chatbot backend is running"}
+    return {"status": "chatbot backend is running"}
 
 
 @app.post("/chat")
