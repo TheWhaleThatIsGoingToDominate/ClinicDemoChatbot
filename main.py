@@ -28,5 +28,5 @@ def home():
 
 @app.post("/chat")
 def chat(request: ChatRequest):
-    reply = chatbot_reply(request.message, request.session_id)
+    reply = chatbot_reply(request.session_id,request.message)
     return {"reply": reply}
