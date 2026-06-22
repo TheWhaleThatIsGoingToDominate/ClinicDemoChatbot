@@ -685,4 +685,5 @@ def user_booking(user_input):
     takingnumber = takingNumber(user_input)
     takingservice = takingService(*takingnumber)
     takingName(*takingservice)
+    print("BOOKING SAVED:", databaseServices)
     pass
