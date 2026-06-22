@@ -2,6 +2,7 @@ from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
 from chatbot import chatbot_reply
+from chatbot import databaseServices
 
 
 app = FastAPI()
@@ -25,6 +26,9 @@ class ChatRequest(BaseModel):
 def home():
     return {"status": "chatbot backend is running"}
 
+@app.get("/debug/bookings")
+def show_bookings():
+    return databaseServices
 
 @app.post("/chat")
 def chat(request: ChatRequest):
