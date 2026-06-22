@@ -18,6 +18,7 @@ app.add_middleware(
 
 class ChatRequest(BaseModel):
     message: str
+    session_id: str
 
 
 @app.get("/")
@@ -27,5 +28,5 @@ def home():
 
 @app.post("/chat")
 def chat(request: ChatRequest):
-    reply = chatbot_reply(request.message)
+    reply = chatbot_reply(request.message, request.session_id)
     return {"reply": reply}
